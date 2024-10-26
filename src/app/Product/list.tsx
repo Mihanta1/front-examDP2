@@ -12,6 +12,7 @@ import {
   handleDeleteProduct,
   handleUpdateProduct,
 } from "../../utils/productHandler";
+import { PageTitle } from "../Components/pageTitle";
 
 const ProductList = () => {
   const {
@@ -33,24 +34,31 @@ const ProductList = () => {
     { header: "Quantity", accessor: "quantity" },
   ];
   return (
-    <div className="">
-      <h1>Product List</h1>
+    <div className="p-6 space-y-4">
+      <PageTitle text="Product List" />
       {error && <p>Error: {error.message}</p>}
 
-      <Button
-        text="Add Product"
-        icon={<FaPlus />}
-        onClick={() => setIsModalOpen(true)}
-      />
+      {/*Boutton d'ajour de produit */}
+      <div className="flex justify-end mr-8">
+        <Button
+          text="Add Product"
+          icon={<FaPlus />}
+          onClick={() => setIsModalOpen(true)}
+          className="btn btn-active btn-accent"
+        />
+      </div>
 
-      <Table
-        columns={columns}
-        data={products}
-        onUpdate={(product) =>
-          handleUpdateProduct(product, setProductToEdit, setIsEditModalOpen)
-        }
-        onDelete={(id) => handleDeleteProduct(id, deleteProduct, setProducts)}
-      />
+      {/* Table avec liste de produiy */}
+      <div className="mt-4">
+        <Table
+          columns={columns}
+          data={products}
+          onUpdate={(product) =>
+            handleUpdateProduct(product, setProductToEdit, setIsEditModalOpen)
+          }
+          onDelete={(id) => handleDeleteProduct(id, deleteProduct, setProducts)}
+        />
+      </div>
 
       {/* Modal pour ajouter un produit */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

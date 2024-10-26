@@ -1,5 +1,7 @@
 import React from "react";
 import { useUpdateProductForm } from "./hooks/useUpdateProductForm";
+import { Button } from "../Components/button";
+import Input from "../Components/input";
 
 interface UpdateProductFormProps {
   product: any;
@@ -32,39 +34,35 @@ const UpdateProductForm: React.FC<UpdateProductFormProps> = ({
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center mt-12 gap-8 h-[50vh]"
     >
-      <input
+      <Input
         type="text"
         placeholder="Name"
-        className="h-12 rounded-lg w-2/3 border outline-none "
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <input
+      <Input
         type="text"
         placeholder="Description"
-        className="h-12 rounded-lg w-2/3 border outline-none "
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <input
+      <Input
         type="number"
         placeholder="Price"
-        className="h-12 rounded-lg w-2/3 border outline-none "
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
 
-      <input
+      <Input
         type="number"
         placeholder="Quantity"
-        className="h-12 rounded-lg w-2/3 border outline-none "
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
       />
 
-      <button type="submit">Update Product</button>
+      <Button text="Update Product" className="btn btn-active btn-accent"/>
     </form>
   );
 };

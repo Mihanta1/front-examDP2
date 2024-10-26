@@ -23,15 +23,13 @@ interface UseUpdateProductFormReturn {
 }
 
 export const useUpdateProductForm = (): UseUpdateProductFormReturn => {
-    const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
 
-  
-
   const loadProductData = (product: UpdateProductData) => {
-    setName(product.name || ""); 
+    setName(product.name || "");
     setPrice(product.price || "");
     setDescription(product.description || "");
     setQuantity(product.quantity || "");

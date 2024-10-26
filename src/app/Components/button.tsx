@@ -8,9 +8,9 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button(props: IButtonProps) {
-  const { text, icon } = props;
+  const { text, icon,className, ...rest } = props;
   return (
-    <button {...props} className="flex">
+    <button {...rest} className={`flex ${className || ""}`}>
       {text}
       <span>{icon}</span>
     </button>

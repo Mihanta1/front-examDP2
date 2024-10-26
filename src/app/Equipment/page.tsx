@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
-import ProductList from "./list";
 import SideBar from "../Components/sidebar";
+import EquipmentList from "./list";
 
-const Product = () => {
+const Equipment = () => {
   return (
     <div className="flex flex-row">
       <div className="w-1/4">
         <SideBar />
       </div>
       <div className="w-3/4">
-        <ProductList />
+        <EquipmentList />
       </div>
     </div>
   );
 };
 
-export default Product;
+export default Equipment;
