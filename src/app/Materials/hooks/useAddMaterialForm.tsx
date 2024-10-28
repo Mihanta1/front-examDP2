@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-export const useAddProductForm = () => {
+export const useAddMaterialForm = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [inventoryLevel, setInventoryLevel] = useState("");
 
   const handleSubmit =
     (onSubmit: (data: any) => void) => (e: React.FormEvent) => {
@@ -12,25 +11,20 @@ export const useAddProductForm = () => {
       onSubmit({
         name: name,
         description: description,
-        price: price,
-        quantity: quantity,
+        inventoryLevel: inventoryLevel,
       });
       setName("");
       setDescription("");
-      setPrice("");
-      setQuantity("");
+      setInventoryLevel("");
     };
 
-  // Retourner directement ces valeurs depuis le hook
   return {
     name,
     setName,
     description,
     setDescription,
-    price,
-    setPrice,
-    quantity,
-    setQuantity,
+    inventoryLevel,
+    setInventoryLevel,
     handleSubmit,
   };
 };

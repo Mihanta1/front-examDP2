@@ -6,7 +6,10 @@ class ProductServiceHook {
   private products: any[] = [];
   private error: any = null;
 
-  constructor(setProducts: (products: any[]) => void, setError: (error: any) => void) {
+  constructor(
+    setProducts: (products: any[]) => void,
+    setError: (error: any) => void
+  ) {
     this.setProducts = setProducts;
     this.setError = setError;
     this.fetchProducts();
@@ -67,7 +70,9 @@ class ProductServiceHook {
   public async deleteProduct(productId: string) {
     try {
       await productService.deleteProduct(productId);
-      this.products = this.products.filter((product) => product._id !== productId);
+      this.products = this.products.filter(
+        (product) => product._id !== productId
+      );
       this.setProducts(this.products);
     } catch (error) {
       this.error = error;

@@ -26,7 +26,7 @@ const Table: React.FC<TableProps> = ({ columns, data, onUpdate, onDelete }) => {
             <tr key={index}>
                 <td></td>
               {columns.map((column) => (
-                <td key={column.accessor}>{row[column.accessor]}</td>
+                <td key={column.accessor}>{row[column.accessor]  ?? ""}</td>
               ))}
               <td>
                 <button onClick={() => onUpdate(row)}>Update</button>
