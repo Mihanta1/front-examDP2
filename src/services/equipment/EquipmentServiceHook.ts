@@ -15,7 +15,7 @@ class EquipmentServiceHook {
     this.fetchEquipments();
   }
 
-  private async fetchEquipments() {
+  public async fetchEquipments() {
     try {
       const data = await equipmentService.getAllEquipments();
       this.equipments = data;

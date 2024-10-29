@@ -15,7 +15,7 @@ class MaterialServiceHook {
     this.fetchMaterials();
   }
 
-  private async fetchMaterials() {
+ public async fetchMaterials() {
     try {
       const data = await materialService.getAllMaterials();
       this.materials = data;

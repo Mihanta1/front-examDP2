@@ -1,4 +1,5 @@
 import React from "react";
+import { FaPen, FaTrash } from "react-icons/fa";
 
 interface TableProps {
   columns: Array<{ header: string; accessor: string }>;
@@ -28,9 +29,9 @@ const Table: React.FC<TableProps> = ({ columns, data, onUpdate, onDelete }) => {
               {columns.map((column) => (
                 <td key={column.accessor}>{row[column.accessor]  ?? ""}</td>
               ))}
-              <td>
-                <button onClick={() => onUpdate(row)}>Update</button>
-                <button onClick={() => onDelete(row._id)}>Delete</button>
+              <td className="flex space-x-2 ">
+                <button onClick={() => onUpdate(row)} className="btn btn-outline btn-accent"><FaPen/></button>
+                <button onClick={() => onDelete(row._id)} className="btn btn-outline btn-error"><FaTrash/></button>
               </td>
             </tr>
           ))}

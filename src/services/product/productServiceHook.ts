@@ -15,7 +15,7 @@ class ProductServiceHook {
     this.fetchProducts();
   }
 
-  private async fetchProducts() {
+  public async fetchProducts() {
     try {
       const data = await productService.getAllProducts();
       this.products = data;
