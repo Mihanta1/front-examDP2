@@ -42,8 +42,8 @@ export const useAddOperationForm = () => {
       onSubmit({
         duration,
         state,
-        equipment: selectedEquipment,
-        material: selectedMaterial,
+        equipments: selectedEquipment,
+        materials: selectedMaterial,
       });
 
       setDuration("");

@@ -3,7 +3,7 @@ import { baseUrl } from "@/config";
 class OrderService {
   async createOrder(orderData: any) {
     try {
-      const response = await fetch(`${baseUrl}/order/`, {
+      const response = await fetch(`${baseUrl}/order`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -19,7 +19,7 @@ class OrderService {
 
   async getAllOrders() {
     try {
-      const response = await fetch(`${baseUrl}/order/`, {
+      const response = await fetch(`${baseUrl}/order`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",

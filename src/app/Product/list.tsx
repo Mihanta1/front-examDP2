@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import useProductService from "./hooks/useProductService";
 import { Button } from "../Components/button";
